@@ -13,10 +13,10 @@ return (
                                     alt="Satyam Audios logo"
                                     className="mr-2"
                                     height="40"
-                                    src="https://storage.googleapis.com/a1aa/image/gNE6WMQjJHsQrM42qtskbDRazDXwX8-EgRTEEs90rRc.jpg"
+                                    src="src/assets/vinyl-record.png"
                                     width="40"
                                 />
-                                <span className="text-xl font-bold">Satyam Audios</span>
+                                <span className="text-xl font-bold">Zwaram Audios</span>
                             </div>
                             <p className="text-sm mb-4">
                                 Zwaram Audios is one of the leading LP Vinyl Records company in Kerala,

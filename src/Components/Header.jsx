@@ -2,16 +2,17 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div>
       <Navbar className="bg-primary">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             <div className="d-flex justify-content-around gap-5">
               <div>
+                <Link to={"./"} >
                 <img
                   alt=""
                   src="src/assets/vinyl-record.png"
@@ -20,6 +21,9 @@ function Header() {
                   className="d-inline-block align-top"
                 />{" "}
                 <span className="text-white">Zwaram Audios</span>
+                </Link>
+                
+                
               </div>
 
               <div className="icons">
@@ -48,43 +52,43 @@ function Header() {
           </Navbar.Brand>
         </Container>
       </Navbar>
-      <Nav
-        className="d-flex justify-content-center "
-        defaultActiveKey="/home"
-        as="ul"
-      >
-        <Nav.Item as="li">
-        <Nav.Link href="/home" style={{
-                    color: "",
-                    cursor: "pointer",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "red")}
-                  onMouseLeave={(e) => (e.target.style.color = "")}>Home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item as="li">
-        <Nav.Link
-  eventKey="link-1"
-  style={{
-    transition: "color 0.3s ease, box-shadow 0.3s ease",
-  }}
-  onMouseEnter={(e) => {
-    e.target.style.color = "red";
-    e.target.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
-  }}
-  onMouseLeave={(e) => {
-    e.target.style.color = "";
-    e.target.style.boxShadow = "none";
-  }}
->
-  LP Vinyl Records
-</Nav.Link>
-        </Nav.Item>
-        <Nav.Item as="li">
-          <Nav.Link eventKey="link-2">Buy Now</Nav.Link>
-        </Nav.Item>
-       
-      </Nav>
+      <Nav className="d-flex justify-content-center bg-dark py-3 shadow-lg" defaultActiveKey="/home" as="ul">
+      {/* Home */}
+      <Nav.Item as="li" className="mx-3">
+        <Nav.Link as={Link} to="/" 
+          className="text-white fw-bold px-3 py-2 rounded"
+          style={{ transition: "color 0.3s ease, transform 0.2s ease" }}
+          onMouseEnter={(e) => { e.target.style.color = "red"; e.target.style.transform = "scale(1.1)"; }}
+          onMouseLeave={(e) => { e.target.style.color = "white"; e.target.style.transform = "scale(1)"; }}
+        >
+          Home
+        </Nav.Link>
+      </Nav.Item>
+
+      {/* LP Vinyl Records */}
+      <Nav.Item as="li" className="mx-3">
+        <Nav.Link as={Link} to="/Cards"
+          className="text-white fw-bold px-3 py-2 rounded"
+          style={{ transition: "color 0.3s ease, transform 0.2s ease" }}
+          onMouseEnter={(e) => { e.target.style.color = "red"; e.target.style.transform = "scale(1.1)"; }}
+          onMouseLeave={(e) => { e.target.style.color = "white"; e.target.style.transform = "scale(1)"; }}
+        >
+          LP Vinyl Records
+        </Nav.Link>
+      </Nav.Item>
+
+      {/* Buy Now */}
+      <Nav.Item as="li" className="mx-3">
+        <Nav.Link as={Link} to="/buy"
+          className="text-white fw-bold px-3 py-2 rounded"
+          style={{ transition: "color 0.3s ease, transform 0.2s ease" }}
+          onMouseEnter={(e) => { e.target.style.color = "red"; e.target.style.transform = "scale(1.1)"; }}
+          onMouseLeave={(e) => { e.target.style.color = "white"; e.target.style.transform = "scale(1)"; }}
+        >
+          Buy Now
+        </Nav.Link>
+      </Nav.Item>
+    </Nav>
     </div>
   );
 }

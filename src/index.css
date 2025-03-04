@@ -1,0 +1,14 @@
+#carts-card{
+    width: 20rem;
+    border: solid 1px;
+    padding: 10px;
+    border-radius: 20px;
+    
+}
+
+#card-image{
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+}
+
